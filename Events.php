@@ -16,7 +16,7 @@ class Events extends \yii\base\Object
             'label' => 'Weather Settings',
             'url' => Url::toRoute('/weather/admin/index'),
             'group' => 'settings',
-            'icon' => '<i class="fa-cloud"></i>',
+            'icon' => '<i class="fa fa-cloud"></i>',
             'isActive' => Yii::$app->controller->module && Yii::$app->controller->module->id == 'weather' && Yii::$app->controller->id == 'admin',
             'sortOrder' => 650
         ]);
