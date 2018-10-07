@@ -27,8 +27,8 @@ public static function addWeatherFrame($event)
         if (Yii::$app->user->isGuest) {
             return;
         }
-        $event->sender->view->registerAssetBundle(Assets::className());
-        $event->sender->addWidget(WeatherFrame::className(), [], [
+        $event->sender->view->registerAssetBundle(Assets::class);
+        $event->sender->addWidget(WeatherFrame::class, [], [
             'sortOrder' => Setting::Get('timeout', 'weather')
         ]);
     }
