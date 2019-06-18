@@ -1,5 +1,6 @@
 
 ## [HumHub](https://www.humhub.org/en) Weather Module
+[![CLA assistant](https://cla-assistant.io/readme/badge/GreenMeteor/humhub-weather-module)](https://cla-assistant.io/GreenMeteor/humhub-weather-module)
 
 Creates a Weather widget on your Dashboard.
 
