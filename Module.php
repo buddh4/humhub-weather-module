@@ -13,10 +13,9 @@ class Module extends \humhub\components\Module
      */
     public function getConfigUrl()
     {
-        return Url::to([
-                    '/weather/admin'
-        ]);
+        return Url::to(['/weather/admin']);
     }
+
     public function getServerUrl()
     {
         $url = $this->settings->get('serverUrl');
@@ -26,4 +25,12 @@ class Module extends \humhub\components\Module
         return $url;
     }
 
+    public function getLocation()
+    {
+        $location = $this->settings->get('location');
+        if (empty($location)) {
+            return '';
+        }
+        return $location;
+    }
 }

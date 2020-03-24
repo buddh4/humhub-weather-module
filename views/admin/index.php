@@ -13,6 +13,7 @@ use yii\helpers\Html;
         <?php $form = ActiveForm::begin(['id' => 'configure-form']); ?>
         <div class="form-group">
             <?= $form->field($model, 'serverUrl'); ?>
+            <?= $form->field($model, 'location'); ?>
         </div>
 
         <div class="form-group">

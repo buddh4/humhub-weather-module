@@ -3,8 +3,6 @@
 namespace humhub\modules\weather\widgets;
 
 use Yii;
-use yii\helpers\Url;
-use humhub\libs\Html;
 use humhub\components\Widget;
 
 /**
@@ -21,6 +19,9 @@ class WeatherFrame extends Widget
     public function run()
     {
         $url = Yii::$app->getModule('weather')->getServerUrl() . '/';
-        return $this->render('weatherframe', ['weatherUrl' => $url]);
+
+        $location = Yii::$app->getModule('weather')->getLocation();
+
+        return $this->render('weatherframe', ['weatherUrl' => $url, 'location' => $location]);
     }
 }
