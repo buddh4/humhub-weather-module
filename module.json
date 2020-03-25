@@ -3,7 +3,7 @@
     "name": "Weather",
     "description": "Creates a Weather widget on your Dashboard.",
     "keywords": ["weather"],
-    "version": "1.0.4-dev",
+    "version": "1.0.3",
     "humhub": {
     "minVersion": "1.4"
     },

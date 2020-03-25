@@ -9,11 +9,24 @@ class Module extends \humhub\components\Module
 {
 
     /**
+     * @var boolean check daily for new HumHub version
+     */
+    public $dailyCheckForNewVersion = true;
+
+    /**
      * @inheritdoc
      */
     public function getConfigUrl()
     {
-        return Url::to(['/weather/admin']);
+        return Url::to(['/weather/admin/index']);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getUrl()
+    {
+        return Url::toRoute(['/weather/admin/about']);
     }
 
     public function getServerUrl()
@@ -32,5 +45,19 @@ class Module extends \humhub\components\Module
             return '';
         }
         return $location;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getNotifications()
+    {
+        if (Yii::$app->user->isAdmin()) {
+            return [
+                'humhub\modules\weather\notifications\NewVersionAvailable'
+            ];
+        }
+
+        return [];
     }
 }
