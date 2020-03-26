@@ -1,6 +1,6 @@
 {
     "id": "weather",
-    "version": "1.0.4-dev",
+    "version": "1.0.5",
     "name": "Weather",
     "description": "Creates a Weather widget on your Dashboard.",
     "humhub": {
