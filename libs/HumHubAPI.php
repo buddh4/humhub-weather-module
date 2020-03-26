@@ -3,8 +3,12 @@
 namespace humhub\modules\weather\libs;
 
 use Yii;
+use \Zend\Http\Client;
 use yii\helpers\Json;
 use humhub\libs\CURLHelper;
+use \Zend\Http\Client\Adapter\Curl;
+use yii\base\InvalidArgumentException;
+use \Zend\Http\Client\Adapter\Exception\RuntimeException;
 
 /**
  * HumHubAPI provides access to humhub.com for fetching available modules or latest version.
@@ -35,15 +39,15 @@ class HumHubAPI
             $url .= urlencode($name) . '=' . urlencode($value)."&";
         }
         try {
-            $http = new \Zend\Http\Client($url, [
-                'adapter' => '\Zend\Http\Client\Adapter\Curl',
+            $http = new Client($url, [
+                'adapter' => Curl::class,
                 'curloptions' => CURLHelper::getOptions(),
                 'timeout' => 30
             ]);
 
             $response = $http->send();
             $json = $response->getBody();
-        } catch (\Zend\Http\Client\Adapter\Exception\RuntimeException $ex) {
+        } catch (RuntimeException $ex) {
             Yii::error('Could not connect to HumHub API! ' . $ex->getMessage());
             return [];
         } catch (Exception $ex) {
@@ -53,16 +57,16 @@ class HumHubAPI
 
         try {
             return Json::decode($json);
-        } catch (\yii\base\InvalidArgumentException $ex) {
+        } catch (InvalidArgumentException $ex) {
             Yii::error('Could not parse HumHub API response! ' . $ex->getMessage());
             return [];
         }
     }
 
     /**
-     * Fetch latest HumHub version online
+     * Fetch latest Module version online
      *
-     * @return string latest HumHub Version
+     * @return string latest Module Version
      */
     public static function getLatestVersion()
     {
