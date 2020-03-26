@@ -37,7 +37,7 @@ class HumHubAPI
         }
         try {
             $http = new \Zend\Http\Client($url, [
-                'adapter' => \Zend\Http\Client\Adapter\Curl,
+                'adapter' => '\Zend\Http\Client\Adapter\Curl',
                 'curloptions' => CURLHelper::getOptions(),
                 'timeout' => 30
             ]);
