@@ -3,12 +3,9 @@
 namespace humhub\modules\weather\libs;
 
 use Yii;
-use \Zend\Http\Client;
 use yii\helpers\Json;
 use humhub\libs\CURLHelper;
-use \Zend\Http\Client\Adapter\Curl;
 use yii\base\InvalidArgumentException;
-use \Zend\Http\Client\Adapter\Exception\RuntimeException;
 
 /**
  * HumHubAPI provides access to humhub.com for fetching available modules or latest version.
@@ -39,15 +36,15 @@ class HumHubAPI
             $url .= urlencode($name) . '=' . urlencode($value)."&";
         }
         try {
-            $http = new Client($url, [
-                'adapter' => Curl::class,
+            $http = new \Zend\Http\Client($url, [
+                'adapter' => \Zend\Http\Client\Adapter\Curl,
                 'curloptions' => CURLHelper::getOptions(),
                 'timeout' => 30
             ]);
 
             $response = $http->send();
             $json = $response->getBody();
-        } catch (RuntimeException $ex) {
+        } catch (\Zend\Http\Client\Adapter\Exception\RuntimeException $ex) {
             Yii::error('Could not connect to HumHub API! ' . $ex->getMessage());
             return [];
         } catch (Exception $ex) {
