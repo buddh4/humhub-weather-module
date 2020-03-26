@@ -4,6 +4,7 @@ namespace humhub\modules\weather;
 
 use Yii;
 use yii\helpers\Url;
+use humhub\modules\weather\notifications\NewVersionAvailable;
 
 class Module extends \humhub\components\Module
 {
@@ -19,14 +20,6 @@ class Module extends \humhub\components\Module
     public function getConfigUrl()
     {
         return Url::to(['/weather/admin/index']);
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getUrl()
-    {
-        return Url::toRoute(['/weather/admin/about']);
     }
 
     public function getServerUrl()
@@ -54,7 +47,7 @@ class Module extends \humhub\components\Module
     {
         if (Yii::$app->user->isAdmin()) {
             return [
-                'humhub\modules\weather\notifications\NewVersionAvailable'
+                NewVersionAvailable::class
             ];
         }
 
