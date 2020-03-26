@@ -35,4 +35,15 @@ class Events extends BaseObject
             'sortOrder' => Setting::Get('timeout', 'weather')
         ]);
     }
+
+    /**
+     * Callback on daily cron job run
+     *
+     * @param \yii\base\Event $event
+     */
+    public static function onCronDailyRun($event)
+    {
+        Yii::$app->queue->push(new jobs\CleanupLog());
+        Yii::$app->queue->push(new jobs\CheckForNewVersion());
+    }
 }

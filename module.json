@@ -1,11 +1,21 @@
 {
     "id": "weather",
+    "version": "1.0.5",
     "name": "Weather",
     "description": "Creates a Weather widget on your Dashboard.",
-    "keywords": ["weather"],
-    "version": "1.0.4",
     "humhub": {
-    "minVersion": "1.4"
+        "minVersion": "1.4"
     },
-    "screenshots": ["assets/Screenshot_1.png", "assets/Screenshot_2.png"]
+    "keywords": ["weather", "module"],
+    "screenshots": ["assets/Screenshot_1.png", "assets/Screenshot_2.png"],
+    "homepage": "https://github.com/GreenMeteor",
+    "issues": "https://github.com/GreenMeteor/humhub-weather-module/issues",
+    "authors": [
+        {
+            "name": "Green Meteor",
+            "email": "GreenMeteor@asia.com",
+            "homepage": "https://github.com/GreenMeteor",
+            "role": "Developer"
+        }
+    ]	
 }
