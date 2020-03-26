@@ -19,12 +19,12 @@ class WeatherNotificationCategory extends NotificationCategory
 
     public function getDescription()
     {
-        return Yii::t('AdminModule.notification', 'Receive Notifications for administrative events like available updates.');
+        return Yii::t('WeatherModule.notification', 'Receive Notifications for administrative events like available updates.');
     }
 
     public function getTitle()
     {
-        return Yii::t('AdminModule.notification', 'Administrative');
+        return Yii::t('WeatherModule.notification', 'Administrative');
     }
 
 }
