@@ -44,7 +44,7 @@ class NewVersionAvailable extends BaseNotification
      */
     public function getUrl()
     {
-        return Url::toRoute(['/weather/admin/about']);
+        return Url::to(['@web/marketplace/update']);
     }
 
     /**
@@ -68,7 +68,7 @@ class NewVersionAvailable extends BaseNotification
      */
     public function html()
     {
-        return Yii::t('AdminModule.notification', "There is a new HumHub Version ({version}) available.", ['version' => Html::tag('strong', $this->getLatestVersion())]);
+        return Yii::t('WeatherModule.notification', "There is an update for the Weather module!", ['version' => Html::tag('strong', $this->getLatestVersion())]);
     }
 
 }
