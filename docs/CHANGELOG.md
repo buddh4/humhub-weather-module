@@ -1,4 +1,10 @@
 # Changelogs
+Date: *3/28/2020*
+- Enh: Added archive.json & linked POEditor
+
+Date: *3/26/2020*
+- Fix: Refactoring 2
+
 Date: *3/25/2020*
 - Enh: Possible fix for broken link
 - Enh: Create `notification.php`
