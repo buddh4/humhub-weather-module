@@ -1,6 +1,8 @@
 # Changelogs
 Date: *3/29/2020*
 - Enh: Version Upgrade
+- Enh: Updated Translations
+- Enh: Changed Notification wording 
 
 Date: *3/28/2020*
 - Enh: Added archive.json & linked POEditor
