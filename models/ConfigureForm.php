@@ -42,7 +42,7 @@ class ConfigureForm extends Model
     public function attributeHints()
     {
         return [
-            'serverUrl' => 'e.g. https://forecast7.com/{language}/{id}',
+            'serverUrl' => 'e.g. https://forecast7.com/{widget-language}/{id}/{language}/ or https://forecast7.com/{widget-language}/{id}/{language}/?unit=us',
             'location' => 'e.g. New York'
         ];
     }
