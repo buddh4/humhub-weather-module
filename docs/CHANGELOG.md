@@ -1,4 +1,10 @@
 # Changelogs
+Date: *4/11/2020*
+- Chg: New serverUrl attributeHints
+- Chg: Minor changes
+- Enh: Version Update
+- Fix: Issue [#9](https://github.com/GreenMeteor/humhub-weather-module/issues/9)
+
 Date: *3/29/2020*
 - Enh: Version Upgrade
 - Enh: Updated Translations
