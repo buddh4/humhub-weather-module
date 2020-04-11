@@ -3,8 +3,9 @@
 use yii\helpers\Url;
 use humhub\libs\Html;
 use humhub\models\Setting;
+use \humhub\modules\weather\Assets;
 
-\humhub\modules\weather\Assets::register($this);
+Assets::register($this);
 ?>
 
 <div class="panel panel-default panel-weather" id="panel-weather">
