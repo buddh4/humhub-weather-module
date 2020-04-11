@@ -18,7 +18,7 @@ class WeatherFrame extends Widget
      */
     public function run()
     {
-        $url = Yii::$app->getModule('weather')->getServerUrl() . '/';
+        $url = Yii::$app->getModule('weather')->getServerUrl() . '';
 
         $location = Yii::$app->getModule('weather')->getLocation();
 
