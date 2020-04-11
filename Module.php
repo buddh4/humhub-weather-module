@@ -26,7 +26,7 @@ class Module extends \humhub\components\Module
     {
         $url = $this->settings->get('serverUrl');
         if (empty($url)) {
-            return 'https://forecast7.com';
+            return 'https://forecast7.com/';
         }
         return $url;
     }
