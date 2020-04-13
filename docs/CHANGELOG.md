@@ -1,4 +1,8 @@
 # Changelogs
+Date: *4/13/2020*
+- Chg: Namespace from `humhub\modules\weather` to `gm\modules\weather`
+- Chg: Removed notification function in favor of core implementation
+
 Date: *4/11/2020*
 - Chg: New serverUrl attributeHints
 - Chg: Minor changes
