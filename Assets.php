@@ -1,6 +1,6 @@
 <?php
 
-namespace humhub\modules\weather;
+namespace gm\modules\weather;
 
 use Yii;
 use yii\web\AssetBundle;
