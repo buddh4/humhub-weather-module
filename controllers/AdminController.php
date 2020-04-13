@@ -1,10 +1,10 @@
 <?php
 
-namespace humhub\modules\weather\controllers;
+namespace gm\modules\weather\controllers;
 
 use Yii;
+use gm\modules\weather\models\ConfigureForm;
 use humhub\modules\admin\components\Controller;
-use humhub\modules\weather\models\ConfigureForm;
 
 class AdminController extends Controller
 {
