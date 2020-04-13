@@ -1,6 +1,6 @@
 <?php
 
-namespace humhub\modules\weather\widgets;
+namespace gm\modules\weather\widgets;
 
 use Yii;
 use humhub\components\Widget;
