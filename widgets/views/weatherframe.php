@@ -3,13 +3,14 @@
 use yii\helpers\Url;
 use humhub\libs\Html;
 use humhub\models\Setting;
-use \humhub\modules\weather\Assets;
+use humhub\widgets\PanelMenu;
+use gm\modules\weather\Assets;
 
 Assets::register($this);
 ?>
 
 <div class="panel panel-default panel-weather" id="panel-weather">
-    <?= \humhub\widgets\PanelMenu::widget(['id' => 'panel-weather']); ?>
+    <?= PanelMenu::widget(['id' => 'panel-weather']); ?>
   <div class="panel-heading">
     <i class="fa fa-cloud">&nbsp;</i><?= Yii::t('WeatherModule.base', '<strong>Weather</strong>'); ?>
   </div>
