@@ -1,18 +1,12 @@
 <?php
 
-namespace humhub\modules\weather;
+namespace gm\modules\weather;
 
 use Yii;
 use yii\helpers\Url;
-use humhub\modules\weather\notifications\NewVersionAvailable;
 
 class Module extends \humhub\components\Module
 {
-
-    /**
-     * @var boolean check daily for new HumHub version
-     */
-    public $dailyCheckForNewVersion = true;
 
     /**
      * @inheritdoc
@@ -38,19 +32,5 @@ class Module extends \humhub\components\Module
             return '';
         }
         return $location;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getNotifications()
-    {
-        if (Yii::$app->user->isAdmin()) {
-            return [
-                NewVersionAvailable::class
-            ];
-        }
-
-        return [];
     }
 }
