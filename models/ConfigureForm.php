@@ -1,6 +1,6 @@
 <?php
 
-namespace humhub\modules\weather\models;
+namespace gm\modules\weather\models;
 
 use Yii;
 use yii\base\Model;
