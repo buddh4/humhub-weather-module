@@ -1,12 +1,11 @@
 <?php
 
-namespace humhub\modules\weather;
+namespace gm\modules\weather;
 
 use Yii;
 use yii\helpers\Url;
 use yii\base\BaseObject;
 use humhub\models\Setting;
-use humhub\modules\weather\widgets\WeatherFrame;
 
 class Events extends BaseObject
 {
@@ -31,19 +30,8 @@ class Events extends BaseObject
 
         $event->sender->view->registerAssetBundle(Assets::class);
 
-        $event->sender->addWidget(WeatherFrame::class, [], [
+        $event->sender->addWidget(widgets\WeatherFrame::class, [], [
             'sortOrder' => Setting::Get('timeout', 'weather')
         ]);
-    }
-
-    /**
-     * Callback on daily cron job run
-     *
-     * @param \yii\base\Event $event
-     */
-    public static function onCronDailyRun($event)
-    {
-        Yii::$app->queue->push(new jobs\CleanupLog());
-        Yii::$app->queue->push(new jobs\CheckForNewVersion());
     }
 }
