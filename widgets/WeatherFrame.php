@@ -22,6 +22,10 @@ class WeatherFrame extends Widget
 
         $location = Yii::$app->getModule('weather')->getLocation();
 
+        if(!$url || !$location) {
+            return '';
+        }
+
         return $this->render('weatherframe', ['weatherUrl' => $url, 'location' => $location]);
     }
 }
