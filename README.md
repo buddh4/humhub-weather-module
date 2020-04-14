@@ -6,6 +6,19 @@ Creates a Weather widget on your Dashboard.
 
 > Note: Forecast7 is an external service that provides the code that is placed within your HumHub's sidebar.
 
+### CSP
+
+ - Requires `frame-src` https://weatherwidget.io/ in case you've overwritten the default csp header.
+ 
+ ```php
+"frame-src" => [
+    "self" => true,
+    "allow" => [
+        'https://weatherwidget.io/'
+    ]
+],
+```
+
 ### __Product Distributors:__
 [@GreenMeteor](https://github.com/GreenMeteor)
 

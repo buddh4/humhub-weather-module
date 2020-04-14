@@ -2,6 +2,9 @@
 Date: *4/13/2020*
 - Chg: Namespace from `humhub\modules\weather` to `gm\modules\weather`
 - Chg: Removed notification function in favor of core implementation
+- Enh: Added border radius to weather iframe
+- Enh: Added CSP nonce compatibility
+- Fix: Only render snippet if module configuration is set
 
 Date: *4/11/2020*
 - Chg: New serverUrl attributeHints
