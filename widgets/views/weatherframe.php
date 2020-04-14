@@ -37,11 +37,11 @@ Assets::register($this);
             'data-theme' => "original"
         ])?>
 
-        <?= Html::beginTag('script', ['id' => 'weatherwidget-io-js', 'src' => 'https://weatherwidget.io/js/widget.min.js']) ?><?= Html::endTag('script')?>
+        <?= Html::beginTag('script', ['id' => 'weatherwidget-io-js', 'src' => 'https://weatherwidget.io/js/widget.min.js']) ?><?= Html::endTag('script') ?>
         <script <?= Html::nonce() ?>>
-            $(document).off('humhub:ready.gm_weather').on('humhub:ready.gm_weather', function() {
-                if($('#weatherwidget-io-js').length) {
-                    __weatherwidget_init();
+            $(document).off('humhub:ready.gm_weather').on('humhub:ready.gm_weather', function(event ,pjax) {
+                if(pjax && window.__weatherwidget_init && $('#weatherwidget-io-js').length) {
+                   __weatherwidget_init();
                 }
             });
         </script>
